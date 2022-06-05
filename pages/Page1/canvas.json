@@ -108,11 +108,12 @@
                       "fontSize": "1.25rem"
                     },
                     {
-                      "resetFormOnClick": false,
+                      "resetFormOnClick": true,
                       "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
                       "widgetName": "FormButton1",
                       "onClick": "{{insert_registry.run(() => JSObject1.myFun1(), () => {})}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "dynamicPropertyPathList": [],
                       "displayName": "FormButton",
                       "iconSVG": "/static/media/icon.cca02633.svg",
                       "topRow": 33,
@@ -238,7 +239,7 @@
                       "key": "x74o8yc8lz",
                       "labelTextSize": "0.875rem",
                       "isRequired": false,
-                      "defaultDate": "{{Date()}}",
+                      "defaultDate": "{{new Date()}}",
                       "rightColumn": 64,
                       "widgetId": "2oqh5043j7",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -250,7 +251,7 @@
                       "labelAlignment": "left",
                       "renderMode": "CANVAS",
                       "isLoading": false,
-                      "timePrecision": "minute",
+                      "timePrecision": "second",
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "firstDayOfWeek": 0,
                       "closeOnSelection": true,
@@ -536,7 +537,7 @@
                           "text": "{{List1.listData.map((currentItem) => currentItem.name)}}",
                           "fontSize": "1rem",
                           "fontStyle": "BOLD",
-                          "textAlign": "LEFT",
+                          "textAlign": "{{List1.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  'CENTER';\n              })();\n            })}}",
                           "textColor": "#231F20",
                           "truncateButtonColor": "#FFC13D",
                           "widgetName": "Text3",
@@ -825,6 +826,9 @@
                         },
                         {
                           "key": "template.Text3Copy.textAlign"
+                        },
+                        {
+                          "key": "template.Text3.textAlign"
                         }
                       ],
                       "gridType": "vertical",
@@ -1014,7 +1018,7 @@
                                       "key": "5baly14tx9",
                                       "rightColumn": 32,
                                       "disableLink": true,
-                                      "textAlign": "LEFT",
+                                      "textAlign": "CENTER",
                                       "widgetId": "ubknu0v1go",
                                       "logBlackList": {
                                         "isVisible": true,

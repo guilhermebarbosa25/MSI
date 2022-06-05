@@ -40,10 +40,10 @@
         },
         "delete": {
           "limit": {
-            "data": "ALL"
+            "data": "SINGLE"
           },
           "query": {
-            "data": "{name: {{List1.selectedItem.name}}}"
+            "data": "{name: {{List1.selectedItem.name}}\ndate: {{List1.selectedItem.date}}\nteam: {{List1.selectedItem.team}}}"
           }
         },
         "distinct": {
@@ -78,7 +78,7 @@
         },
         "misc": {
           "formToNativeQuery": {
-            "data": "{\n  \"delete\": \"form_submissions\",\n  \"deletes\": [{\n    \"q\": {name: {{List1.selectedItem.name}}},\n    \"limit\": 0,\n  }]\n}\n",
+            "data": "{\n  \"delete\": \"form_submissions\",\n  \"deletes\": [{\n    \"q\": {name: {{List1.selectedItem.name}}\ndate: {{List1.selectedItem.date}}\nteam: {{List1.selectedItem.team}}},\n    \"limit\": 1,\n  }]\n}\n",
             "status": "SUCCESS"
           }
         },
@@ -108,7 +108,9 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "List1.selectedItem.name"
+      "List1.selectedItem.date",
+      "List1.selectedItem.name",
+      "List1.selectedItem.team"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
