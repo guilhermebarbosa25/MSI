@@ -73,12 +73,12 @@
         },
         "insert": {
           "documents": {
-            "data": "{\n  \"name\": {{Input1.text}}\n  \"date\": {{DatePicker1.selectedDate.replace(\"T\",\" \").replace(\"Z\",\" \")}}\n}"
+            "data": "{\n  \"name\": {{Input1.text}}\n  \"date\": {{DatePicker1.selectedDate.replace(\"T\",\" \").replace(\"Z\",\" \")}}\n\"team\": {{Select1.selectedOptionValue}}\n}"
           }
         },
         "misc": {
           "formToNativeQuery": {
-            "data": "{\n  \"insert\": \"form_submissions\",\n  \"documents\": {\n  \"name\": {{Input1.text}}\n  \"date\": {{DatePicker1.selectedDate.replace(\"T\",\" \").replace(\"Z\",\" \")}}\n}\n}\n",
+            "data": "{\n  \"insert\": \"form_submissions\",\n  \"documents\": {\n  \"name\": {{Input1.text}}\n  \"date\": {{DatePicker1.selectedDate.replace(\"T\",\" \").replace(\"Z\",\" \")}}\n\"team\": {{Select1.selectedOptionValue}}\n}\n}\n",
             "status": "SUCCESS"
           }
         },
@@ -109,7 +109,8 @@
     "messages": [],
     "jsonPathKeys": [
       "DatePicker1.selectedDate.replace(\"T\",\" \").replace(\"Z\",\" \")",
-      "Input1.text"
+      "Input1.text",
+      "Select1.selectedOptionValue"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

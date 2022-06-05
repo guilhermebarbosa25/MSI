@@ -43,7 +43,7 @@
             "data": "ALL"
           },
           "query": {
-            "data": "{_id: {{List1.selectedItem._id}}}"
+            "data": "{name: {{List1.selectedItem.name}}}"
           }
         },
         "distinct": {
@@ -78,7 +78,7 @@
         },
         "misc": {
           "formToNativeQuery": {
-            "data": "{\n  \"delete\": \"form_submissions\",\n  \"deletes\": [{\n    \"q\": {_id: {{List1.selectedItem._id}}},\n    \"limit\": 0,\n  }]\n}\n",
+            "data": "{\n  \"delete\": \"form_submissions\",\n  \"deletes\": [{\n    \"q\": {name: {{List1.selectedItem.name}}},\n    \"limit\": 0,\n  }]\n}\n",
             "status": "SUCCESS"
           }
         },
@@ -108,7 +108,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "List1.selectedItem._id"
+      "List1.selectedItem.name"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

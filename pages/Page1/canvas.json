@@ -111,7 +111,7 @@
                       "resetFormOnClick": false,
                       "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
                       "widgetName": "FormButton1",
-                      "onClick": "{{insert_registry.run(() => count_all.run(), () => {})}}",
+                      "onClick": "{{insert_registry.run(() => JSObject1.myFun1(), () => {})}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "displayName": "FormButton",
                       "iconSVG": "/static/media/icon.cca02633.svg",
@@ -398,7 +398,7 @@
                   "widgetName": "Canvas4",
                   "displayName": "Canvas",
                   "topRow": 0,
-                  "bottomRow": 550,
+                  "bottomRow": 570,
                   "parentRowSpace": 1,
                   "type": "CANVAS_WIDGET",
                   "canExtend": false,
@@ -637,7 +637,7 @@
                           "widgetId": "4y4yvdopex",
                           "renderMode": "CANVAS",
                           "buttonColor": "{{List1.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  '#dc2626';\n              })();\n            })}}",
-                          "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                          "borderRadius": "{{List1.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  '1.5rem';\n              })();\n            })}}",
                           "boxShadow": "none",
                           "isLoading": false,
                           "parentColumnSpace": 6.7734375,
@@ -688,7 +688,7 @@
                             "parentId": true,
                             "dynamicBindingPathList": true
                           },
-                          "onClick": "{{delete_item.run(() => get_all.run(), () => {})}}"
+                          "onClick": "{{delete_item.run(() => JSObject1.myFun1(), () => {})}}"
                         },
                         "Text3Copy": {
                           "boxShadow": "none",
@@ -720,7 +720,7 @@
                           "text": "{{List1.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  currentItem.team;\n              })();\n            })}}",
                           "key": "5baly14tx9",
                           "rightColumn": 64,
-                          "textAlign": "LEFT",
+                          "textAlign": "{{List1.listData.map((currentItem, currentIndex) => {\n              return (function(){\n                return  'CENTER';\n              })();\n            })}}",
                           "widgetId": "oly5inj7no",
                           "logBlackList": {
                             "isVisible": true,
@@ -779,7 +779,7 @@
                       "displayName": "List",
                       "iconSVG": "/static/media/icon.9925ee17.svg",
                       "topRow": 8,
-                      "bottomRow": 53,
+                      "bottomRow": 55,
                       "parentRowSpace": 10,
                       "type": "LIST_WIDGET",
                       "hideCard": false,
@@ -819,6 +819,12 @@
                         },
                         {
                           "key": "template.Text3Copy.text"
+                        },
+                        {
+                          "key": "template.Button1.borderRadius"
+                        },
+                        {
+                          "key": "template.Text3Copy.textAlign"
                         }
                       ],
                       "gridType": "vertical",
@@ -927,7 +933,7 @@
                                       "key": "5baly14tx9",
                                       "rightColumn": 52,
                                       "disableLink": true,
-                                      "textAlign": "LEFT",
+                                      "textAlign": "CENTER",
                                       "widgetId": "oly5inj7no",
                                       "logBlackList": {
                                         "isVisible": true,
@@ -1141,7 +1147,7 @@
                                     {
                                       "boxShadow": "none",
                                       "widgetName": "Button1",
-                                      "onClick": "{{delete_item.run(() => get_all.run(), () => {})}}",
+                                      "onClick": "{{delete_item.run(() => JSObject1.myFun1(), () => {})}}",
                                       "buttonColor": "#dc2626",
                                       "displayName": "Button",
                                       "iconSVG": "/static/media/icon.cca02633.svg",
@@ -1158,11 +1164,7 @@
                                         }
                                       ],
                                       "leftColumn": 0,
-                                      "dynamicBindingPathList": [
-                                        {
-                                          "key": "borderRadius"
-                                        }
-                                      ],
+                                      "dynamicBindingPathList": [],
                                       "text": "🗑️",
                                       "isDisabled": false,
                                       "key": "4wbpibzwcd",
@@ -1208,7 +1210,7 @@
                                       "parentId": "aapioflgtb",
                                       "renderMode": "CANVAS",
                                       "isLoading": false,
-                                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                                      "borderRadius": "1.5rem",
                                       "buttonVariant": "PRIMARY",
                                       "placement": "CENTER"
                                     }
@@ -1296,7 +1298,7 @@
                       ],
                       "shouldTruncate": false,
                       "truncateButtonColor": "#FFC13D",
-                      "text": "Formulário da Monografia",
+                      "text": "Lista de Respostas",
                       "key": "ghnc9e1tqk",
                       "rightColumn": 64,
                       "textAlign": "LEFT",
